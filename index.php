@@ -11,6 +11,12 @@
 			<h1>Ofertômetro</h1>
 			<h2>Aqui diminuímos o seu gasto e você aumenta a nossa nota!</h2>
 		</header>
+		<nav>
+			<ul>
+				<li><a href="index.php">Criar Cupom</a></li>
+				<li><a href="validate.php">Validar Cupom</a></li>
+			</ul>
+		</nav>
 		<div id="form-container">
 			<div id="ins-status">Aguardando</div>
 			<p>
@@ -33,15 +39,13 @@
 				<p>
 					<input type="number" name="prc-off" placeholder="Desconto (em %)">
 				</p>
+				<p>
+					<button id="main-button">Registrar</button>
+				</p>
 			</section>
 		</div>
 		<div id="table-container">
 			<table>
-				<tr>
-					<th>Estabelecimento</th>
-					<th>Oferta</th>
-					<th>Desconto</th>
-				</tr>
 			</table>
 		</div>
 	</body>
