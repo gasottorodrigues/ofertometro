@@ -3,6 +3,7 @@
 	<head>
 		<title>Ofertômetro</title>
 		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="interface.css">
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript">
 			$(function(){
@@ -33,13 +34,11 @@
 			<h2>Aqui diminuímos o seu gasto e você aumenta a nossa nota!</h2>
 		</header>
 		<nav>
-			<ul>
-				<li><a href="index.php">Criar Cupom</a></li>
-				<li><a href="validate.php">Validar Cupom</a></li>
-			</ul>
+			<li><a href="index.php">Criar Cupom</a></li>
+			<li><a href="validate.php">Validar Cupom</a></li>
 		</nav>
+		<div id="ins-status">Aguardando</div>
 		<div id="form-container">
-			<div id="ins-status">Aguardando</div>
 			<input name="cupom" type="text" placeholder="Insira o cupom aqui" >
 		</div>
 		<div id="cupom-container">

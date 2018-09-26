@@ -17,6 +17,19 @@ function loadProms(){
 	})
 }
 /*----------------------------------------------------------------------*/
+function loadOffs(type, formExec){
+	$.ajax({
+			url :'load-offs.php?type=' + type + '&estab='+ $("#estab-sel").val(),
+			type: "get"
+		}).done(function(msg){
+			$("#oferta-sel").html(msg);
+			if(formExec == 1){
+				$("#hidden-form-sec").css("display","block");
+			}
+	});
+
+}
+/*----------------------------------------------------------------------*/
 function genCupom(id){
 	$.ajax({
 		url : "gen-cupom.php?prom=" + id,
@@ -44,7 +57,7 @@ function insertPromocao(){
 		},
 
 		berforeSend : function(){
-			$("#ins-status").html("Enivando...");
+			$("#ins-status").html("Enviando...");
 		}
 	}).done(function(msg){
 		$str = "<tr><td>"+
@@ -71,6 +84,9 @@ $(function(){
 	loadEstabs();
 	loadProms();
 /*----------------------------------------------------------------------*/
+	$("#estab-sel").change(function(){
+		loadOffs($('[name="oferta-type"]:checked').val(),0);
+	});
 	$('[name="ins-estab"]').keypress(function(e){
 		var estab = $(this).val();
 
@@ -83,7 +99,7 @@ $(function(){
 				},
 
 				berforeSend : function(){
-					$("#ins-status").html("Enivando...");
+					$("#ins-status").html("Enviando...");
 				}
 			}).done(function(msg){
 				var option = "<option value=\""+ estab + "\" selected>" 
@@ -95,6 +111,8 @@ $(function(){
 				setTimeout(function(){
 					$("#ins-status").html("Aguardando");
 				},500);
+
+				loadOffs($('[name="oferta-type"]:checked').val(),0);
 				
 			}).fail(function(){
 				$("#ins-status").html("Algo deu errado.");
@@ -104,14 +122,8 @@ $(function(){
 /*----------------------------------------------------------------------*/
 	$('[name="oferta-type"]').change(function(){
 		var type = $(this).val();
+		loadOffs(type,1);
 		
-		$.ajax({
-			url :'load-offs.php?type=' + type + '&estab='+ $("#estab-sel").val(),
-			type: "get"
-		}).done(function(msg){
-			$("#oferta-sel").html(msg);
-			$("#hidden-form-sec").css("display","block");
-		});
 	});
 /*----------------------------------------------------------------------*/
 	$('[name="ins-oferta"]').keypress(function(e){
@@ -128,7 +140,7 @@ $(function(){
 				},
 
 				berforeSend : function(){
-					$("#ins-status").html("Enivando...");
+					$("#ins-status").html("Enviando...");
 				}
 			}).done(function(msg){
 				$("#selOf").attr("id","");
