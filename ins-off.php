@@ -1,9 +1,11 @@
 <?php
+    require_once "configDB.php";
+
 	$nome = $_POST["nome"];
 	$estab = $_POST["estab"];
 	$tipo = $_POST["tipo"];
 
-	$link = mysqli_connect("localhost","root","usbw","ofertometro");
+	$link = configDB();
 	$sql = "INSERT INTO oferta(estabelecimento,descricao,tipo) VALUES('".$estab."','".$nome."','".$tipo."')";
 	mysqli_query($link,$sql);
 

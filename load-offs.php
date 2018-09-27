@@ -1,9 +1,10 @@
 <?php
+    require_once "configDB.php";
 
 	$type = $_GET["type"];
 	$estab = $_GET["estab"];
 
-	$link = mysqli_connect("localhost","root","usbw","ofertometro");
+	$link = configDB();
 	$sql = "SELECT * FROM oferta WHERE tipo = '".$type."' AND estabelecimento = '".$estab."'";
 	$result = mysqli_query($link,$sql);
 

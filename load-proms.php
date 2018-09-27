@@ -1,6 +1,6 @@
 <?php
-
-	$link = mysqli_connect("localhost","root","usbw","ofertometro");
+    require_once "configDB.php";
+	$link = configDB();
 	$sql = "SELECT * FROM promocao JOIN oferta ON oferta.idOf = promocao.oferta";
 	$result = mysqli_query($link,$sql);
 

@@ -2,9 +2,18 @@
 <html>
 	<head>
 		<title>Ofertômetro</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="interface.css">
-		<script type="text/javascript" src="jquery.js"></script>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <!--Bootstrap-->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+
+        <!--Personal-->
+        <script src="js/script.js" type="text/javascript"></script>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+
 		<script type="text/javascript">
 			$(function(){
 				$('[name="cupom"]').keyup(function(){
@@ -28,7 +37,7 @@
 			});
 		</script>
 	</head>
-<body>
+    <body>
 		<header>
 			<h1>Ofertômetro</h1>
 			<h2>Aqui diminuímos o seu gasto e você aumenta a nossa nota!</h2>
@@ -43,4 +52,4 @@
 		</div>
 		<div id="cupom-container">
 		</div>
-</body>
+    </body>

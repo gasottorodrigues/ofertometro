@@ -1,8 +1,9 @@
 <?php
+    require_once "configDB.php";
 	$desc = $_POST["desconto"];
 	$off = $_POST["oferta"];
 
-	$link = mysqli_connect("localhost","root","usbw","ofertometro");
+	$link = configDB();
 	$sql = "INSERT INTO promocao(oferta,desconto) VALUES(".$off.",".$desc.")";
 	mysqli_query($link,$sql);
 

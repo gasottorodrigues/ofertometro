@@ -1,8 +1,8 @@
 <?php
-
+    require_once "configDB.php";
 	$cupom = $_GET["cupom"];
 
-	$link = mysqli_connect("localhost","root","usbw","ofertometro");
+	$link = configDB();
 	$sql = "SELECT * FROM cupom JOIN promocao ON promocao.idProm = cupom.promocao JOIN oferta ON oferta.idOf = promocao.oferta WHERE cupom.cupom = '".$cupom."'";
 	$result = mysqli_query($link,$sql);
 	if(mysqli_num_rows($result) !=0){
