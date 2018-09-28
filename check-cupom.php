@@ -6,7 +6,7 @@
 	$sql = "SELECT * FROM cupom JOIN promocao ON promocao.idProm = cupom.promocao JOIN oferta ON oferta.idOf = promocao.oferta WHERE cupom.cupom = '".$cupom."'";
 	$result = mysqli_query($link,$sql);
 	if(mysqli_num_rows($result) !=0){
-		echo "<h1>CUPOM VÁLIDO</h1>";
+        echo "<span class='text-success'>CUPOM VÁLIDO</span>";
 		while($aux = mysqli_fetch_array($result)){
 			echo"<p>";
 				echo"<b>Oferta Correspondente: </b>";
@@ -19,7 +19,7 @@
 			echo"</p>";
 		}
 	}else{
-		echo "<h1>CUPOM INVÁLIDO</h1>";
+		echo "<span class='text-danger'>CUPOM INVÁLIDO</span>";
 	}
 
 ?>

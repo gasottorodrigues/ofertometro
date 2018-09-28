@@ -13,7 +13,7 @@ function loadProms(){
 		url : "load-proms.php",
 		type : 'get'
 	}).done(function(msg){
-		$("#table-container > table").html(msg);
+		$("#table-container").html(msg);
 	})
 }
 /*----------------------------------------------------------------------*/
@@ -24,7 +24,8 @@ function loadOffs(type, formExec){
 		}).done(function(msg){
 			$("#oferta-sel").html(msg);
 			if(formExec == 1){
-				$("#hidden-form-sec").css("display","block");
+                $("#hidden-form-sec").removeClass("d-none");
+				$("#hidden-form-sec").addClass("d-block");
 			}
 	});
 
@@ -58,13 +59,14 @@ function insertPromocao(){
 
 		berforeSend : function(){
 			$("#ins-status").html("Enviando...");
-		}
+
+        }
 	}).done(function(msg){
 		$str = "<tr><td>"+
 		$("#estab-sel").val() + "</td><td>" +
 		$("#oferta-sel").find("option:selected").html() + "/" + $('[name="oferta-type"]:checked').val() + "</td><td>" +
-		$('[name="prc-off"]').val() + "%</td><td><button onclick=\"genCupom("+ msg +")\">Obter cupom</button></tr>";
-		$("#table-container > table").append($str);
+		$('[name="prc-off"]').val() + "%</td><td><button class='btn btn-outline-dark' onclick=\"genCupom("+ msg +")\">Obter cupom</button></tr>";
+		$("#table-container").append($str);
 
 		$("#estab-sel").val(0);
 		$('[name="prc-off"]').val('');

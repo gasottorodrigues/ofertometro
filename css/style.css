@@ -1,71 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@media (max-width: 767.98px) {
-    #header button{
-        width: 30%;
-    }
-}
-
-@media (min-width: 768px) {
-    #header button{
-        width: 30%;
-    }
-}
 
 body{
     font-family: 'Roboto', sans-serif;
 }
 
-.medium{
-    font-size: medium;
+.table-responsive{
+    height: 35rem;
 }
 
-.container-fluid{
-    padding: 0;
-    overflow-x: hidden;
-}
 
-#header{
-    background-image: url("../img/background.jpg");
-    background-repeat: no-repeat;
-    background-positon: top;
-    background-size: cover;
-}
 
-#header button{
-    border-radius: 0;
-
-}
-
-#menu li{
-    width:100%;
-    border-bottom: #17a2b8 solid 3px;
-}
-
-#menu li:hover{
-    background-color: #1b1e21;
-    border-bottom:solid 3px #1b1e21;
-    box-shadow: 0 0 15px #343a40;
-}
-
-.conteudo{
-    padding: 8rem 0;
-}
-
-#sobre{
-    background-image: linear-gradient(to bottom, #ffffff , #fcfdff);
-}
-
-#habilidades{
-    background-image: linear-gradient(to bottom, #4C3737 , #402C2C);
-}
-
-#portfolio{
-    background-image: url("../img/portfolio.jpg");
-    background-repeat: no-repeat;
-    background-positon: top;
-    background-size: cover;
-}
-
-#portfolio img{
-    height: 300px;
-}

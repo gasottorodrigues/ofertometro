@@ -16,7 +16,7 @@
 			echo"<td>".$aux["estabelecimento"]."</td>";
 			echo"<td>".$aux["descricao"]."/".$aux["tipo"]."</td>";
 			echo"<td>".$aux["desconto"]."%</td>";
-			echo"<td><button onclick=\"genCupom(".$aux["idProm"].")\">Obter cupom</button></td>";
+			echo"<td><button class='btn btn-outline-dark' onclick=\"genCupom(".$aux["idProm"].")\">Obter cupom</button></td>";
 		echo"</tr>";
 	}
 ?>
